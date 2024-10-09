@@ -1,0 +1,35 @@
+.logoLogin{
+    width: 350px;
+    height: 95px;
+}
+
+.btnSeparacion{
+    margin: 2%;
+}
+
+h1{
+    font-style: italic;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 10%;
+    text-transform: capitalize;
+}
+
+.form{
+    width: 400px; 
+    
+}
+
+.centrarElm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+/* .startelem{
+    display: flex;
+    justify-content:start;
+    align-items: start;
+    float: inline-start;
+    
+} */

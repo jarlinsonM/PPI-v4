@@ -1,0 +1,32 @@
+img{
+    margin-top: 3%;
+    border-radius: 4%;
+    width: 330px;
+    height: 200px;
+}
+.separacion{
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    width: 22rem;
+    
+}
+
+/* li{
+    text-align: justify;
+}
+p{
+    text-align: justify;
+} */
+
+/* h2{
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: overline;
+}
+h3{
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: overline;
+} */
