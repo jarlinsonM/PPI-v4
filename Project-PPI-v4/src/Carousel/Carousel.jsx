@@ -3,8 +3,6 @@ import ac from '../ImagenesSpa/01.png'
 import brerc from '../ImagenesSpa/BRERC_Spa.png'
 import '../Css/Carousel.css'
 
-import React from 'react'
-
 const Carousel = () => {
   return (
     <div id="carouselExample" class="carousel slide">
