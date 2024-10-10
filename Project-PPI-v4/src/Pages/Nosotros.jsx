@@ -5,7 +5,7 @@ import '../Css/Nosotros.css'
 const Nosotros = () => {
   return (
 
-    <div className='container'>
+    <div className= 'container'>
       <Carousel />
       <div className=" col-8 mx-auto">
         <h1 className="text-center">Nosotros</h1>

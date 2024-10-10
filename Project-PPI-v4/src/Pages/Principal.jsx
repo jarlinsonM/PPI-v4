@@ -1,5 +1,6 @@
 import ImgInicio from '../ImagenesSpa/principal.png'
 import '../Css/Principal.css'
+import {Link, NavLink} from 'react-router-dom'
 const Principal = () => {
   return (
     <div className="container">
@@ -29,7 +30,10 @@ const Principal = () => {
               Reserva tu cita hoy mismo y déjanos ser tu refugio en medio del ajetreo diario.</p>
           </div>
           <div className=''>
+            <Link to="/Servicios">
             <button type="button" class="btn btn-secondary boton">Ver servicios</button>
+            </Link>
+            
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ const Login = () => {
   return (
     <div className="container row align-items-center ">
       <div className="col-6">
-      <h1>Biebenido A NatrueBodySpace</h1>
+      <h1>Bienvenido A NatrueBodySpace</h1>
       </div>
       <div className="card separacion col-6">
         <img src={icono} alt=""  className="logoLogin"/>

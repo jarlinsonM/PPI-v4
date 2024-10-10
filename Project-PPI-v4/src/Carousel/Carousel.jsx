@@ -26,21 +26,6 @@ const Carousel = () => {
         
       </button>
     </div>
-    // <div>
-    //   <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
-    //             <div className="carousel-inner">
-    //                 <div className="carousel-item active ">
-    //                     <img src={oip} className="d-block w-100 carousel-img" alt="Imagen 1"/>
-    //                 </div>
-    //                 <div className="carousel-item">
-    //                     <img src={ac} className="d-block w-100 carousel-img" alt="Imagen 2"/>
-    //                 </div>
-    //                 <div className="carousel-item">
-    //                     <img src={brerc} className="d-block w-100 carousel-img" alt="Imagen 3"/>
-    //                 </div>
-    //             </div>
-    //         </div>
-    // </div>
   )
 }
 
