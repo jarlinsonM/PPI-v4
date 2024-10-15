@@ -31,9 +31,9 @@ const AdminSer = () => {
                 </thead>
                 <tbody>
                     {servicios.map(servicio => (
-                        <tr key={servicio.id}>
-                            <td>{servicio.nombre}</td>
-                            <td>{servicio.descripcion}</td>
+                        <tr key={servicio.ID_servicio}>
+                            <td>{servicio.nombreServicio}</td>
+                            <td>{servicio.Descripcion}</td>
                             <td>{servicio.duracion}</td>
                             <td>{servicio.precio}</td>
                         </tr>

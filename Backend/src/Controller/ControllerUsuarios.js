@@ -18,7 +18,16 @@ export const registerU = async (req, res) => {
     //res.status(500).json({ error: "Error registrando el usuario" }); 
   }
 };
-
+export const Log_inU = async (req, res) => {
+  try {
+    const formData = req.body; 
+    const lgUser = await Log_inU(formData); 
+    res.json(lgUser); 
+  } catch (error) {
+    console.error(error);
+    //res.status(500).json({ error: "Error registrando el usuario" }); 
+  }
+};
 
 
 export {getAllUser}

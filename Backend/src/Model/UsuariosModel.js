@@ -38,8 +38,22 @@ const RegistrarUser = async(formData) =>{
         console.error("Error al registrar el usuario:", error);
         throw error;
     }
-}
 
-export {getAllUsuarios , RegistrarUser}
+}
+const LogearUser = async(formData) =>{
+    const {
+        userName,
+        password,
+      } = formData;
+
+    try {
+        const LginUser = await sql.query(`SELECT userName, passwordus FROM usuario WHERE userName = '${userName}' AND passwordus = '${password}' `);
+        return LginUser.recordset;
+    } catch (error) {
+        console.error("Error logear el usuario:", error);
+        throw error;
+    }
+}
+export {getAllUsuarios , RegistrarUser, LogearUser}
 
 
