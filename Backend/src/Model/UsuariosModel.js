@@ -12,4 +12,6 @@ const getAllUsuarios = async() =>{
     }
 }
 
-export {getAllUsuario}
+export {getAllUsuarios}
+
+

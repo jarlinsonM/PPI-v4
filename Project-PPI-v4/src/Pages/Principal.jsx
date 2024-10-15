@@ -31,7 +31,7 @@ const Principal = () => {
           </div>
           <div className=''>
             <Link to="/Servicios">
-            <button type="button" class="btn btn-secondary boton">Ver servicios</button>
+            <button type="button" className="btn btn-secondary boton">Ver servicios</button>
             </Link>
             
           </div>
