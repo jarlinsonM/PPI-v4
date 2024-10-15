@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = 'http://localhost:3000/register'
 
-export const RegistrarUser = async (formData) => { // Recibe formData como parámetro
+export const RegisterUser = async (formData) => { // Recibe formData como parámetro
   try {
     const response = await axios.post(api, formData, {
       headers: {
@@ -10,7 +10,7 @@ export const RegistrarUser = async (formData) => { // Recibe formData como pará
       },
     });
     console.log('Datos enviados correctamente:', response.data);
-    return response.data; // Si necesitas manejar la respuesta en el frontend
+    return response.data;
   } catch (error) {
     console.error('Error enviando los datos:', error);
     throw error; // Para manejar el error en el frontend

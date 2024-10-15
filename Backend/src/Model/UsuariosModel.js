@@ -12,6 +12,34 @@ const getAllUsuarios = async() =>{
     }
 }
 
-export {getAllUsuarios}
+const RegistrarUser = async(formData) =>{
+    const {
+        nombre,
+        apellidos,
+        telefono,
+        direccion,
+        tipoDocumento,
+        numeroDocumento,
+        edad,
+        correo,
+        userName,
+        password,
+        confirmarPassword
+      } = formData;
+
+    try {
+        const Rusuarios = await sql.query(`
+            INSERT INTO usuario (nombre, apellidos, telefono, direccion, tipoDocumento, numeroDocumento, edad, correo, userName, passwordus, confirmarPassword)
+            VALUES ('${nombre}', '${apellidos}', ${telefono}, '${direccion}',
+             '${tipoDocumento}', ${numeroDocumento}, ${edad}, '${correo}', '${userName}', '${password}','${confirmarPassword}')`);
+      
+          return Rusuarios.recordset;
+    } catch (error) {
+        console.error("Error al registrar el usuario:", error);
+        throw error;
+    }
+}
+
+export {getAllUsuarios , RegistrarUser}
 
 

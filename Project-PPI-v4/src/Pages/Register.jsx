@@ -1,7 +1,7 @@
 import icono from '../ImagenesSpa/Logo.png'
 import '../Css/Login.css'
 import { useState, useEffect } from 'react'
-import { RegistrarUser } from '../Services/RegisterServer'
+import { RegisterUser } from '../Services/RegisterServer.js'
 const Register = () => {
   const [formData, setFormData] = useState({
     nombre: '',
@@ -16,7 +16,7 @@ const Register = () => {
     password: '',
     confirmarPassword: '',
   });
-  const [error, setError] = useState('');
+  const [error, setError] = useState ('');
 
   // useEffect(()=>{
   //   fetchRegistro()
@@ -27,7 +27,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const registro = await RegistrarUser(formData);
+      const registro = await RegisterUser(formData);
       console.log('Registro exitoso:', registro);
     } catch (error) {
       setError('Error al registrar el usuario');

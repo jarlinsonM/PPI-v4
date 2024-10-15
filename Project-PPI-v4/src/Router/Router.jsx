@@ -6,6 +6,8 @@ import Agenda from '../Pages/Agenda'
 import Login  from '../Pages/Login'
 import Register from '../Pages/Register'
 import Citas from  '../Pages/Citas'
+import AdminSer from '../Pages/AdminSer'
+import AdminUs from '../Pages/AdminUs'
 
 const Router = () => {
   return (
@@ -16,7 +18,9 @@ const Router = () => {
       <Route path="/Servicios/Agenda" element={<Agenda />}/>
       <Route path="/login" element={<Login />}/>
       <Route path="/register" element={<Register />}/>
-      <Route path="/Servicios/citas" element={<Citas />}/> 
+      <Route path="/Servicios/citas" element={<Citas />}/>
+      <Route path="Admin/Servicios" element={<AdminSer />}/>
+      <Route path="Admin/Usuarios" element={<AdminUs />}/> 
     </Routes>
   )
 }
