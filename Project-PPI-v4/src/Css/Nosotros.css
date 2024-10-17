@@ -1,5 +1,6 @@
-p{
+.p{
     text-align: justify;
     font-size: 15px;
     border-bottom: 2px solid black;
+    font-family: 'Times New Roman', Times, serif;
 } 

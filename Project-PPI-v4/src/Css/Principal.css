@@ -1,30 +1,91 @@
-img{
+.img{
     width: 350px;
     height: 500px;
     margin-top: 5%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    border-radius: 8px; /* Bordes suaves para la imagen */
+    transition: opacity 0.3s ease; /* Efecto de transición suave */
 }
 
 .middle{
-    margin-top: 10%;
-    text-align: center;
-    font-size: larger;
+    padding: 2rem;
+    
+    height: 500px;
 }
 
-.title{
-    font-family:'Times New Roman', Times, serif;
-    text-transform: capitalize ;
-    font-style: italic;
-    font-size: 50px;
-    width: 400px;
-    margin-left: 23%;
-}
+
 .h2title{
-    font-size: 30px;
-    font-family:'Times New Roman', Times, serif;
-    text-transform: capitalize ;
-    font-style: italic;
+    font-size: 2.5rem;
+    color: #3b610f;
+    font-family: 'Times New Roman', Times, serif;
 }
+
 
 .boton{
     margin-left: 150px;
 }
+
+.title {
+    font-size: 3rem;
+    color: #3b610f;
+    text-transform: uppercase;
+}
+
+.parrafos, .li {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    border-bottom: none;
+    list-style: none;
+
+
+}
+
+.col-4 .img {
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid #19d260; /* Borde azul vibrante alrededor de la imagen */
+}
+
+/* Contenedor que engloba la imagen y el texto */
+.div2 {
+    position: relative;
+    display: inline-block; /* Permite que la imagen y el texto se superpongan correctamente */
+  }
+  
+  
+  /* Contenedor del texto que aparecerá encima de la imagen */
+.text-center2 {
+    position: absolute; /* Para posicionar el texto sobre la imagen */
+    top: 60%; /* Coloca el texto en el centro vertical */
+    left: 50%; /* Coloca el texto en el centro horizontal */
+    transform: translate(-50%, -50%); /* Ajusta para centrar correctamente el contenido */
+    color: rgb(0, 0, 0); /* Texto blanco para contraste */
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.6s ease; /* Transición suave para el cambio de visibilidad */
+    z-index: 1; /* El texto debe estar por encima de la imagen */
+    text-align: center;
+}
+  
+  /* Texto dentro del contenedor */
+.parrafos2 {
+    font-size: 1.2rem;
+    background-color: rgba(156, 231, 185, 0.6); /* Fondo oscuro translúcido para el texto */
+    padding: 1rem; /* Espacio alrededor del texto */
+    border-radius: 8px; /* Bordes suaves */
+    width: 300px;
+}
+  
+  /* Efecto hover: cuando el ratón pase sobre la imagen */
+.div2:hover .text-center2 {
+    opacity: 4; /* El texto se vuelve visible */
+}
+  
+  .div2:hover .img {
+    opacity: 0.7; /* La imagen se vuelve ligeramente transparente para destacar el texto */
+  }
+
+  
+
+  

@@ -16,11 +16,9 @@ const Register = () => {
     password: '',
     confirmarPassword: '',
   });
-  const [error, setError] = useState ('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
-  // useEffect(()=>{
-  //   fetchRegistro()
-  // },[])
 
 
   const handleSubmit = async (e) => {
@@ -52,7 +50,7 @@ const Register = () => {
         <form onSubmit={handleSubmit}>
           <div className="col-md-3 form">
             <label htmlFor="nombre" className="form-label">Nombre</label>
-            <input type="text" className="form-control" id="nombre" value={formData.nombre} onChange={handleChange}/>
+            <input type="text" className="form-control" id="nombre" value={formData.nombre} onChange={handleChange} />
           </div>
           <div className="col-md-3 form">
             <label htmlFor="apellidos" className="form-label">Apellidos</label>
@@ -69,9 +67,9 @@ const Register = () => {
           <div className="mb-3 startelem">
             <select id="tipoDocumento" value={formData.tipoDocumento} onChange={handleChange}>
               <option value="Ti">Tarjeta de identidad</option>
-              <option value="cc">Cédula de Ciudadanía</option>
-              <option value="ce">Cédula Extranjera</option>
-              <option value="p">Pasaporte</option>
+              <option value="Cc">Cédula de Ciudadanía</option>
+              <option value="Ce">Cédula Extranjera</option>
+              <option value="P">Pasaporte</option>
             </select>
           </div>
           <div className="mb-3 form">
@@ -106,6 +104,8 @@ const Register = () => {
             </div>
           </div>
           <div className="mb-3">
+            {error && <p className="text-danger">{error}</p>}
+            {success && <p className="text-success">{success}</p>}
             <input type="submit" className="btn btn-success" value="Registrarse" id="BotonResgtro" />
           </div>
         </form>

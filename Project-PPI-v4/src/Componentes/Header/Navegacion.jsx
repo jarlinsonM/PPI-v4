@@ -13,7 +13,7 @@ const Navegacion = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 lista">
                             <li className="nav-item">
                                 <Link className="nav-link" to="/">Principal</Link>
                             </li>
@@ -35,7 +35,7 @@ const Navegacion = () => {
                             <Link className="navbar-bran d-flex" to="#"><img src={iconoPerfil} className="logos " alt="" /></Link>
                         </button>
                         <ul className="dropdown-menu">
-                            <li><a className="dropdown-item" href="/Login">Login</a></li>
+                            <li><a className="dropdown-item" href="/Login">Iniciar Sesion</a></li>
                             <li><a className="dropdown-item" href="/register">Register</a></li>
                             <li><a className="dropdown-item" href="#">Perfil</a></li>
                         </ul>

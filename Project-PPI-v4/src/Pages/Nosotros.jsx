@@ -9,7 +9,7 @@ const Nosotros = () => {
       <Carousel />
       <div className=" col-8 mx-auto">
         <h1 className="text-center">Nosotros</h1>
-        <p>
+        <p className="p">
           NaturaBodySpace es un establecimiento de ocio y salud que ofrece ciertos tipos de tratamientos,
           sistemas de relajación, terapias que ayudan a mejorar la salud y brindar al cuerpo relajación,
           tranquilidad, e inclusocon ciertas técnicas se puede ayudar al cuerpo en otros niveles para eliminar

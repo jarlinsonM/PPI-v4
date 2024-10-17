@@ -17,8 +17,8 @@ const Footer = () => {
                     <div className="col">
                         <h4 className='text'>Sigenos en nuestras redes sociales</h4>
                         <img src="#" alt="instagram" />
-                        <img src="#" alt="Facebock" />
-                        <img src="#" alt="Tick Tock" />
+                        <img src="#" alt="Facebook" />
+                        <img src="#" alt="Tik Tok" />
                         <img src="#" alt="You tube" />
                     </div>
                 </div>
