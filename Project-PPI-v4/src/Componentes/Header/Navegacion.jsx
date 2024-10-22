@@ -5,7 +5,7 @@ import '../../Css/Navegacion.css'
 
 const Navegacion = () => {
     return (
-        <div className="container">
+        <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
                     <Link className="navbar-bran " to="/"> <img src={icono} alt="" className="logos" /></Link>

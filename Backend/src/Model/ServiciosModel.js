@@ -12,4 +12,21 @@ const getAllServicios = async() =>{
     }
 }
 
-export {getAllServicios}
+const AgregarServicio = async (formDataS) => {
+    const {
+        nombre,
+        Descripcion,
+        Duracion,
+        Precio,
+    } = formDataS;
+
+    try {
+        const AgregarService = await sql.query(`execute addServicio '${nombre}','${Descripcion}', '${Duracion}', ${Precio}`);
+
+        return AgregarService.recordset;
+    } catch (error) {
+        console.error("Error al Agregar el servicio:", error);
+        throw error;
+    }
+}
+export {getAllServicios,  AgregarServicio};

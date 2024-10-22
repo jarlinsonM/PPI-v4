@@ -30,8 +30,7 @@ const Login = () => {
       console.error('Error al iniciar sesión:', error);
     }
   };
-
-
+  
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData({
