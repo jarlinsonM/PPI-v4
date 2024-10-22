@@ -1,35 +1,45 @@
+import { useEffect, useState } from 'react'
 
 const Citas = () => {
+  const [citas, setCitas] = useState([])
+
+
+  useEffect(() => {
+    const getAllCitas = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/servicios/citas')
+        const data = await response.json()
+        setCitas(data) // Guardar los usuarios en el estado
+      } catch (error) {
+        console.log(error)
+      }
+    };
+    getAllCitas();
+
+  }, [])
   return (
-    <table className="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">fecha</th>
-      <th scope="col">Hora</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+    <table className='table table-spriped table-hover'>
+      <thead>
+        <tr>
+          <th>Documento</th>
+          <th>Servicio</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        {citas.map(cita => (
+          <tr key={cita.id_cita}>
+            <td>{cita.numeroDocumento}</td>
+            <td>{cita.Id_servicio}</td>
+            <td>{cita.fecha}</td>
+            <td>{cita.hora}</td>
+            <td>{cita.esstado}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   )
 }
 

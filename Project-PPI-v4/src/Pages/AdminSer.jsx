@@ -73,6 +73,7 @@ const AdminSer = () => {
                     ))}
                 </tbody>
             </table>
+            
             <h1>Agregar Servicio</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">

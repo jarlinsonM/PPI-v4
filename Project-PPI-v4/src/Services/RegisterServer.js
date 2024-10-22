@@ -18,7 +18,8 @@ export const RegisterUser = async (formData) => { // Recibe formData como parám
   }
 };
 
-const apiLogin = 'http://localhost:3000/register'
+/*
+const apiLogin = 'http://localhost:3000/register/Login'
 
 export const LoginUser = async (formData) => { // Recibe formData como parámetro
   try {
@@ -27,7 +28,7 @@ export const LoginUser = async (formData) => { // Recibe formData como parámetr
         'Content-Type': 'application/json', // Asegura que estás enviando JSON
       },
     });
-    //alert('Login Exitoso');
+    alert('Login Exitoso');
     console.log('Datos enviados correctamente:', response1.data);
     return response1.data;
   } catch (error) {
@@ -35,3 +36,4 @@ export const LoginUser = async (formData) => { // Recibe formData como parámetr
     throw error; // Para manejar el error en el frontend
   }
 };
+*/

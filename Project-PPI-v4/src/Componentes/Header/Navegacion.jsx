@@ -31,8 +31,19 @@ const Navegacion = () => {
                     </div>
 
                     <div className="dropdown">
-                        <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <Link className="navbar-bran d-flex" to="#"><img src={iconoPerfil} className="logos " alt="" /></Link>
+                        <button className="btn btn-secondary dropdown dropD" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Admin
+                        </button>
+                        <ul className="dropdown-menu">
+                            <li><a className="dropdown-item" href="/admin/usuarios">Usuarios</a></li>
+                            <li><a className="dropdown-item" href="/admin/Servicios">Servicios</a></li>
+                            <li><a className="dropdown-item" href="/servicios/citas">Citas</a></li>
+                        </ul>
+                    </div>
+
+                    <div className="dropdown">
+                        <button className="btn btn-secondary dropD dropD2 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <Link className="navbar-bran d-flex" to="#"><img src={iconoPerfil} className="logosP " alt="" /></Link>
                         </button>
                         <ul className="dropdown-menu">
                             <li><a className="dropdown-item" href="/Login">Iniciar Sesion</a></li>

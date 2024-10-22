@@ -2,6 +2,10 @@
     width: 100px;
     height: 50px;
 }
+.logosP{
+    width: 60px;
+    height: 40px;
+}
 
 .lista{
     font-family: 'Times New Roman', Times, serif;
@@ -10,4 +14,14 @@
     line-height: 1.5;
     border-bottom: none;
     list-style: none;
+}
+
+.dropD{
+    margin-left: 60px;
+    margin-right: 2%;
+    
+}
+.dropD2 {
+    background-color: transparent;
+    border: 0px;
 }

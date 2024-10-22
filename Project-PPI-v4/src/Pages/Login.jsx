@@ -4,40 +4,51 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import '../Css/servicios.css'
 import '../Css/Login.css'
-import { LoginUser } from '../Services/RegisterServer.js'
+//import { LoginUser } from '../Services/RegisterServer.js'
 
-const Login = () => {
-  const [formData, setFormData] = useState({
-    userName: '',
-    password: ''
-  });
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState(''); // Para mostrar el mensaje de éxito
-  const navigate = useNavigate(); // Para redirigir al usuario después del login
+const Login = ({onLogin}) => {
+  const [userName, setUserName] = useState('')
+  const [password, setPassword] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(''); // Limpiar error antes de hacer la solicitud
-    setSuccess(''); // Limpiar mensaje de éxito
+    
+    const loginData = {userName,password}
 
     try {
-      const response = await LoginUser(formData);
-      setSuccess('Login exitoso'); // Establece el mensaje de éxito
-      console.log('Login exitoso:', response);
-      navigate("/servicios"); // Redirigir al dashboard o página de inicio después del login
+      const response = await fetch('http://localhost:3000/Register/Login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginData),
+      })
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json()
+
+      if (data.success) {
+        console.log("Login Exitoso")
+        onLogin()
+        useNavigate('/Principal')
+      }else{
+        console.log("Error de autenticacion: ", data.message)
+      }
     } catch (error) {
-      setError('Error al iniciar sesión'); // Muestra el mensaje de error si falla
-      console.error('Error al iniciar sesión:', error);
+      console.error('Error al iniciar sesión:', error)
+      if(error.name === 'TypeError' && error.message === ('No se nada')){
+
+      }else{
+        setError('Sea producido un error, por favor internar nuevamente')
+      }
     }
-  };
+  }
   
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData({
-      ...formData,
-      [id]: value,
-    });
-  };
+  const validateForm = () =>{
+    return userName.length > 0 && password.length > 0
+  }
 
   return (
     <div className="container row align-items-center ">
@@ -50,16 +61,16 @@ const Login = () => {
           <div className="card-body">
             <div className="mb-3 form">
               <label htmlFor="userName" className="form-label">UserName</label>
-              <input type="text" className="form-control" id="userName" value={formData.userName} onChange={handleChange} />
+              <input type="text" className="form-control" id="userName" value={userName} onChange={(e) => setUserName(e.target.value)} />
             </div>
             <div className="mb-3 form">
               <label htmlFor="password" className="form-label">Contraseña</label>
-              <input type="password" className="form-control" id="password" value={formData.password} onChange={handleChange} />
+              <input type="password" className="form-control" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </div>
             <div>
               {error && <p className="text-danger">{error}</p>}
               {success && <p className="text-success">{success}</p>}
-              <input type="submit" className='btn btn-success btnSeparacion' value={"Login"} id='botonLogin' />
+              <input type="submit" className='btn btn-success btnSeparacion' value="Login" id='botonLogin' disabled={!validateForm()}/>
 
               <Link className="botonRegister " to="/register">
                 <input type="button" className='btn btn-success btnSeparacion' value={"Register"} id='botonRegister' />
