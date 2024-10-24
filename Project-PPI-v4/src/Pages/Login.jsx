@@ -9,6 +9,9 @@ import '../Css/Login.css'
 const Login = ({onLogin}) => {
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
+  const [success, setSuccess]= useState('')
+  const [error, setError] = useState('')
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,7 +19,7 @@ const Login = ({onLogin}) => {
     const loginData = {userName,password}
 
     try {
-      const response = await fetch('http://localhost:3000/Register/Login', {
+      const response = await fetch('http://localhost:3000/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -32,17 +35,13 @@ const Login = ({onLogin}) => {
       if (data.success) {
         console.log("Login Exitoso")
         onLogin()
-        useNavigate('/Principal')
+        navigate('/Principal')
       }else{
         console.log("Error de autenticacion: ", data.message)
       }
     } catch (error) {
       console.error('Error al iniciar sesión:', error)
-      if(error.name === 'TypeError' && error.message === ('No se nada')){
-
-      }else{
-        setError('Sea producido un error, por favor internar nuevamente')
-      }
+      setError('Sea producido un error, por favor internar nuevamente')
     }
   }
   

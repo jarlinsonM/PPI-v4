@@ -40,18 +40,10 @@ const RegistrarUser = async (formData) => {
     }
 
 }
-const LogearUser = async (formData) => {
-    const {userName, password,} = formData;
+const LogearUser = async (userName, password) => {
     try {
-        const LginUser = await sql.query(`SELECT userName, passwordus FROM usuario WHERE userName = '${userName}' AND passwordus = '${password}' `);
-        if (!userName || !password) {
-            throw new Error("userName o password no están definidos");
-          }
-        if (LginUser.recordset.length > 0) {
-            return LginUser.recordset[0];
-        } else {
-            return null; // Si no hay coincidencias, retorna null
-        }
+        const result = await sql.query(`SELECT userName, passwordus FROM usuario WHERE userName = '${userName}' AND passwordus = '${password}' `);
+        return result.recordset
     } catch (error) {
         console.error("Error logear el usuario:", error);
         throw error;
